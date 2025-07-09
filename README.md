@@ -109,17 +109,3 @@ To deploy this model in a production environment:
    - Use cloud services (e.g., AWS Lambda, GCP Cloud Functions) for serving.
    - Optimize inference with TensorFlow Serving or ONNX.
 
-Notes
------
-- The pipeline uses LSTMs due to their effectiveness for time-series data. To experiment with Transformers, modify the model architecture using a library like `transformers`.
-- Stock prices are non-stationary; consider adding features like trading volume or technical indicators (e.g., RSI, MA) for improved performance.
-- The pipeline includes logging for debugging and monitoring.
-- Ensure an active internet connection for `yfinance` to fetch data.
-
-Future Improvements
--------------------
-- Add hyperparameter tuning (e.g., using Keras Tuner).
-- Incorporate additional features (e.g., volume, moving averages).
-- Experiment with Transformer-based models for comparison.
-- Implement cross-validation for more robust evaluation.
-
