@@ -55,12 +55,12 @@ def preprocess_data(data, time_steps=60, train_split=0.8):
     return X_train, X_test, y_train, y_test, scaler
 
 # Model Building
-def build_lstm_model(time_steps, units=50, dropout_rate=0.2):
+def build_lstm_model(time_steps, units=50, dropout_rate=0.2): 
      # Build and compile an LSTM model.
- 
+     # input_shape = (time_steps, 1)
     logger.info("Building LSTM model")
     model = Sequential()
-    model.add(LSTM(units=units, return_sequences=True, input_shape=(time_steps, 1)))
+    model.add(LSTM(units=units, return_sequences=True, input_shape=(time_steps, 1)))  # give a output 50 dim vector 
     model.add(Dropout(dropout_rate))
     model.add(LSTM(units=units, return_sequences=False))
     model.add(Dropout(dropout_rate))
